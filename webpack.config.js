@@ -1,7 +1,7 @@
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
-    entry: ['./src/js/main.js', './src/css/style.scss'],
+    entry: ['./src/js/main.js', './src/css/style.scss', './src/js/jquery-3.3.1.min.js'],
     mode: 'none',
     module: {
         rules: [{
@@ -11,7 +11,7 @@ module.exports = {
             })
         },
         {
-            test: /\.(gif|png|jpe?g|svg)$/i,
+            test: /\.(gif|png|jpe?g|svg|ico)$/i,
             use: [
               'file-loader',
               {
@@ -22,6 +22,26 @@ module.exports = {
                 },
               },
             ],
+        },
+        {
+            test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+            use: [{
+                loader: 'file-loader',
+                options: {
+                    name: '[name].[ext]',
+                    outputPath: 'fonts/'
+                }
+            }]
+        },
+        {
+            test: /jquery.+\.js$/,
+            use: [{
+                loader: 'expose-loader',
+                options: 'jQuery'
+            },{
+                loader: 'expose-loader',
+                options: '$'
+            }]
         }]
     },
     output: {
@@ -33,5 +53,8 @@ module.exports = {
     },
     plugins: [
         new ExtractTextPlugin({filename:'app.bundle.css'})
-    ]
+    ],
+    externals: {
+        jquery: 'jQuery'
+    }
 };
