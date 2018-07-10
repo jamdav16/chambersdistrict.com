@@ -15,12 +15,21 @@ section.shop-three {
     .content {
         width: 89%;
         height: 100%;
+        max-height: 100%;
         position: absolute;
         top: 20vh;
         bottom: 0;
         right: 0;
         background-color: rgba(255, 255, 255, 0.85);
         box-sizing: border-box;
-        padding: 35px;
+        padding: 50px;
+        overflow: auto;
+
+        h1 {
+            font-family: 'duke_fillfill', sans-serif;
+            color: #1b1464;
+            font-size: 56px;
+            text-transform: uppercase;
+        }
     }
 }

@@ -139,6 +139,37 @@ b.cloud {
     }
 }
 
+.background__land {
+    position: relative;
+    overflow: hidden;
+    display: block;
+    min-width: 100%;
+    width: calc(100% + 120vw);
+    height: 10%;
+    min-height: 80px;
+    background-color: #f7ce6b;
+    z-index: 1;
+
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        width: 166vw;
+        height: 120px;
+        background-image: url(./../images/building_shadow.png);
+        background-repeat: no-repeat;
+        background-size: 100%;
+        z-index: 1000;
+        margin-left: 11.5vw;
+
+        -webkit-animation: onload 1.5s ease-in-out;
+        -moz-animation: onload 1.5s ease-in-out;
+        animation: onload 1.5s ease-in-out;
+    }
+}
+
 #larr__arrow {
     display: none;
     position: fixed;
@@ -159,37 +190,6 @@ b.cloud {
 
     &:hover svg {
         opacity: 1;
-    }
-}
-
-.background__land {
-    position: relative;
-    overflow: hidden;
-    display: block;
-    min-width: 100%;
-    width: calc(100% + 100vw);
-    height: 10%;
-    min-height: 80px;
-    background-color: #f7ce6b;
-    z-index: 1;
-
-    &:after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        display: block;
-        width: 121.5vw;
-        height: 120px;
-        background-image: url(./../images/building_shadow.png);
-        background-repeat: no-repeat;
-        background-size: 100%;
-        z-index: 1000;
-        margin-left: 8.5vw;
-
-        -webkit-animation: onload 1.5s ease-in-out;
-        -moz-animation: onload 1.5s ease-in-out;
-        animation: onload 1.5s ease-in-out;
     }
 }
 

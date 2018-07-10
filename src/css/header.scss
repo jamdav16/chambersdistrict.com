@@ -5,7 +5,7 @@ header {
     left: 0;
     width: 100%;
     z-index: 10000;
-    padding: 20px 8vw;
+    padding: 20px 150px;
 
     .logo {
         flex: 1;
@@ -13,10 +13,10 @@ header {
         background-image: url(./../images/header_logo.png);
         background-repeat: no-repeat;
         background-size: contain;
-        max-width: 12vh;
-        width: 12vh;
-        height: 12vh;
-        margin-right: 3vw;
+        max-width: 100px;
+        width: 100px;
+        height: 100px;
+        margin-right: 30px;
         transition: transform .2s ease-in-out;
 
         &:hover {
@@ -39,9 +39,9 @@ header {
                 font-family: 'duke_fillfill', sans-serif;
                 text-decoration: none;
                 color: #000000;
-                font-size: 2vw;
+                font-size: 28px;
                 text-transform: uppercase;
-                padding: 3vh 1vh;
+                padding: 18px 14px;
                 color: #f7737e;
                 text-align: left;
                 transition: color .2s ease-in-out;
@@ -58,10 +58,10 @@ header {
                 &:before {
                     content: '';
                     float: left;
-                    margin: 1vw 2vh 0 0;
+                    margin: 10px 14px 0 0;
                     display: block;
-                    width: 1vh;
-                    height: 1vh;
+                    width: 10px;
+                    height: 10px;
                     background-color: #f7737e;
                     border-radius: 50%;
                     transition: background-color .2s ease-in-out;

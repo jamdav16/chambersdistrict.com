@@ -13,7 +13,7 @@ section.home {
         overflow: hidden;
         display: block;
         min-width: 100%;
-        width: 220vh;
+        width: 300vh;
         height: 90%;
         min-height: calc(100% - 80px);
     
@@ -55,7 +55,7 @@ section.home {
             height: 20%;
             display: block;
             z-index: 100;
-            margin-left: 2.3%;
+            margin-left: 1.5%;
             font-family: 'duke_fillfill', sans-serif;
             color: #ffffff;
             text-transform: uppercase;
@@ -92,6 +92,19 @@ section.home {
             -webkit-animation: onload 1.5s ease-in-out;
             -moz-animation: onload 1.5s ease-in-out;
             animation: onload 1.5s ease-in-out;
+
+            &:after {
+                content: '';
+                display: block;
+                position: absolute;
+                right: 0;
+                top: 0;
+                width: 23%;
+                height: 100%;
+                background-color: rgba(238, 203, 172, 0.534);
+                border-left: 1px solid #000000;
+                z-index: 10;
+            }
     
             .logo {
                 background-image: url(./../images/cd_building_logo.png);
@@ -110,7 +123,7 @@ section.home {
                 background-size: 100% 100%;
                 background-repeat: no-repeat;
                 background-position: center center;
-                width: 4.5%;
+                width: 3.8%;
                 height: 20%;
                 position: absolute;
                 top: 23%;
@@ -119,10 +132,23 @@ section.home {
                 $left: 6;
                 @for $i from 2 through 7 {
                     &:nth-child(#{$i+1}) {
-                        left: #{$left + 13}#{'%'};
+                        left: #{$left + 10}#{'%'};
                     }
-                    $left: $left + 13;
+                    $left: $left + 10;
                 }
+            }
+
+            .top-back-window {
+                background-image: url(./../images/top_window.png);
+                background-size: 100% 100%;
+                background-repeat: no-repeat;
+                background-position: center center;
+                width: 3.5%;
+                height: 20%;
+                position: absolute;
+                top: 23%;
+                right: 11.6%;
+                z-index: 20;
             }
     
             .large-window {
@@ -130,14 +156,14 @@ section.home {
                 background-size: 100% 80%;
                 background-repeat: no-repeat;
                 background-position: bottom center;
-                width: 6%;
+                width: 5%;
                 height: 40%;
                 position: absolute;
                 bottom: 3.5%;
-                left: 44.5%;
+                left: 35.5%;
     
                 &:nth-child(2n) {
-                    left: 70.5%;
+                    left: 55.5%;
                 }
             }
     
@@ -146,11 +172,11 @@ section.home {
                 background-size: 100% 80%;
                 background-repeat: no-repeat;
                 background-position: bottom center;
-                width: 9%;
+                width: 7%;
                 height: 46%;
                 position: absolute;
                 bottom: 0;
-                left: 30%;
+                left: 24.5%;
                 font-family: 'duke_fillfill', sans-serif;
                 color: #ffffff;
                 text-transform: uppercase;
@@ -164,7 +190,7 @@ section.home {
                 }
     
                 &:nth-child(2n) {
-                    left: 56%;
+                    left: 44.5%;
                 }
             }
     
@@ -177,7 +203,20 @@ section.home {
                 height: 25%;
                 position: absolute;
                 bottom: 0;  
-                left: 80%;
+                left: 62%;
+            }
+
+            .back-window {
+                background-image: url(./../images/window_back.png);
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: bottom center;
+                width: 5%;
+                height: 32%;
+                position: absolute;
+                bottom: 3.5%;  
+                right: 11%;
+                z-index: 20;
             }
     
             .front-window {
