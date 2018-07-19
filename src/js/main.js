@@ -104,7 +104,7 @@ function MouseWheelHandler(e) {
     var e = window.event || e; // old IE support
     var delta = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)));
 
-    if(document.querySelector("section.home").style.marginTop != '65vh' && document.querySelector("section.home").style.marginLeft != '70vw') {
+    if(document.querySelector("section.home").style.marginTop != '65vh' && document.querySelector("section.home").style.marginLeft != '70vw' && bodyEle.scrollTop == 0) {
 
         if(delta !== 1) {
             if((bodyEle.clientWidth + bodyEle.scrollLeft) <= bodyEle.scrollWidth) {
