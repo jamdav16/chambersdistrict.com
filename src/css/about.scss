@@ -1,4 +1,4 @@
-.content__rooftop-bar {
+.content__about {
     height: 0;
     overflow: hidden;
     position: absolute;
@@ -9,7 +9,7 @@
     background-color: rgba(255, 255, 255, 0.95);
     z-index: 4;
     transition: height 1s;
-    margin: 20vh 20vw;
+    margin: 20vh 30vw 20vh 10vw;
     -webkit-box-shadow: 5px 5px 0px 0px rgba(0,0,0,0.1);
     -moz-box-shadow: 5px 5px 0px 0px rgba(0,0,0,0.1);
     box-shadow: 5px 5px 0px 0px rgba(0,0,0,0.1);

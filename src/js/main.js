@@ -66,21 +66,19 @@ document.getElementById("larr__arrow").addEventListener("mouseout", function() {
 });
 
 function arrowUpdate() {
-    var hometp = document.querySelector("section.home").style.marginTop;
-
-    if(bodyEle.scrollLeft == 0 || bodyEle.scrollTop != 0 || document.querySelector("section.home").style.marginTop == '65vh') {
+    if(bodyEle.scrollLeft == 0 || bodyEle.scrollTop != 0 || document.querySelector("section.home").style.marginTop == '65vh' || document.querySelector("section.home").style.marginLeft == '70vw') {
         document.getElementById("larr__arrow").style.display = 'none';
     } else {
         document.getElementById("larr__arrow").style.display = 'block';
     }
-    if((bodyEle.clientWidth + bodyEle.scrollLeft) == bodyEle.scrollWidth || bodyEle.scrollTop != 0 || document.querySelector("section.home").style.marginTop == '65vh') {
+    if((bodyEle.clientWidth + bodyEle.scrollLeft) == bodyEle.scrollWidth || bodyEle.scrollTop != 0 || document.querySelector("section.home").style.marginTop == '65vh' || document.querySelector("section.home").style.marginLeft == '70vw') {
         document.getElementById("rarr__arrow").style.display = 'none';
     } else {
         document.getElementById("rarr__arrow").style.display = 'block';
     }
 }
 
-window.onscroll = function (e) { 
+window.onscroll = function (e) {
     var elements = document.querySelectorAll('section');
     for (var i = 0; i < elements.length; i++) {
         
@@ -93,27 +91,91 @@ window.onscroll = function (e) {
     }
 }
 
+var myitem = window;
+if (window.addEventListener) {
+    window.addEventListener("mousewheel", MouseWheelHandler, false);
+    window.addEventListener("DOMMouseScroll", MouseWheelHandler, false);
+} else {
+    window.attachEvent("onmousewheel", MouseWheelHandler);
+}
+
+function MouseWheelHandler(e) {
+    // cross-browser wheel delta
+    var e = window.event || e; // old IE support
+    var delta = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)));
+
+    if(document.querySelector("section.home").style.marginTop != '65vh' && document.querySelector("section.home").style.marginLeft != '70vw') {
+
+        if(delta !== 1) {
+            if((bodyEle.clientWidth + bodyEle.scrollLeft) <= bodyEle.scrollWidth) {
+                bodyEle.scrollLeft += 100;
+            }
+        } else {
+            if((bodyEle.clientWidth + bodyEle.scrollLeft) <= bodyEle.scrollWidth) {
+                bodyEle.scrollLeft -= 100;
+            }
+        }
+
+    }
+}
+
 //
 //
 //
 
 document.querySelectorAll('[data-go]').forEach(function(elem) {
-    if(elem.dataset.go == 'rooftop-bar') {
+    if(elem.dataset.go == 'about') {
 
         elem.addEventListener('click', function(event) {
-            scrollTo(0, 500, 'lr');
-            setTimeout(function(){ scrollTo(0, 500); }, 500);
+            scrollTo(-500, 0, 'lr');
+            setTimeout(function(){ scrollTo(-500, 0); }, 500);
+
+            document.querySelectorAll('[data-go]').forEach(function(item) { item.classList.remove('selected'); });
 
             document.querySelector('[data-go="' + this.dataset.go + '"]').classList.add('selected');
 
             setTimeout(function(){
+                document.querySelector("section.home").style.marginLeft = '70vw';
+                document.querySelector("section.home").style.marginTop = '0px';
+                arrowUpdate();
+            }, 1000);
+
+            setTimeout(function(){
+                document.querySelector(".content__about").style.height = '60%';
+            }, 2000);
+
+            if(document.querySelector(".content__rooftop-bar").style.height == '60%') {
+                document.querySelector(".content__rooftop-bar").style.height = '0';
+            }
+
+            event.preventDefault();
+        });
+
+    } else if(elem.dataset.go == 'rooftop-bar') {
+
+        elem.addEventListener('click', function(event) {
+            scrollTo(-20, 500, 'lr');
+            setTimeout(function(){ scrollTo(-20, 500); }, 500);
+
+            document.querySelectorAll('[data-go]').forEach(function(item) { item.classList.remove('selected'); });
+
+            document.querySelector('[data-go="about"]').classList.remove('selected');
+            document.querySelector('[data-go="' + this.dataset.go + '"]').classList.add('selected');
+
+            setTimeout(function(){
                 document.querySelector("section.home").style.marginTop = '65vh';
+                document.querySelector("section.home").style.marginLeft = '0px';
+                document.querySelector(".content__about").style.height = '0';
                 arrowUpdate();
             }, 1000);
 
             setTimeout(function(){
                 document.querySelector(".content__rooftop-bar").style.height = '60%';
             }, 2000);
+
+            if(document.querySelector(".content__about").style.height == '60%') {
+                document.querySelector(".content__about").style.height = '0';
+            }
 
             event.preventDefault();
         });
@@ -125,14 +187,19 @@ document.querySelectorAll('[data-go]').forEach(function(elem) {
 
             // history.pushState({}, this.innerText, this.href);
 
-            document.querySelector('[data-go="rooftop-bar"]').classList.remove('selected');
+            document.querySelectorAll('[data-go]').forEach(function(item) { item.classList.remove('selected'); });
             
             if(document.querySelector(".content__rooftop-bar").style.height == '60%') {
                 document.querySelector(".content__rooftop-bar").style.height = '0';
             }
 
-            if(document.querySelector("section.home").style.marginTop == '65vh') {
+            if(document.querySelector(".content__about").style.height == '60%') {
+                document.querySelector(".content__about").style.height = '0';
+            }
+
+            if(document.querySelector("section.home").style.marginTop == '65vh' || document.querySelector("section.home").style.marginLeft == '70vw') {
                 document.querySelector("section.home").style.marginTop = '0px';
+                document.querySelector("section.home").style.marginLeft = '0px';
                 
                 setTimeout(function() {
 

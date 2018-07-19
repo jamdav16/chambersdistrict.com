@@ -28,7 +28,16 @@
     "webpack-cli": "^3.0.8"
   },
   "dependencies": {
+    "copy-webpack-plugin": "^4.5.2",
+    "css-loader": "^0.28.11",
     "expose-loader": "^0.7.5",
-    "file-loader": "^1.1.11"
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "file-loader": "^1.1.11",
+    "image-webpack-loader": "^4.3.1",
+    "node-sass": "^4.9.0",
+    "sass-loader": "^7.0.3",
+    "style-loader": "^0.21.0",
+    "webpack": "^4.12.2",
+    "webpack-cli": "^3.0.8"
   }
 }
