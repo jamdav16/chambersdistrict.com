@@ -139,6 +139,14 @@ b.cloud {
     }
 }
 
+i.pigeon {
+    background-image: url(./../images/pigeon.png);
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    display: absolute;
+}
+
 .background__land {
     position: relative;
     overflow: hidden;

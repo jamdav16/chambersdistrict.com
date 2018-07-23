@@ -49,12 +49,19 @@ section.shop-three {
             margin: 0 0 25px 0;
         }
 
-        img.logo {
+        .logo {
             display: block;
-            max-width: 70%;
+            width: 280px;
+            height: 280px;
             margin: 0 auto;
             border-radius: 50%;
             border: 10px solid #1b1464;
+
+            &.wingwing {
+                background-image: url(./../images/wing-wing-logo.png);
+                background-size: cover;
+                background-position: center center;
+            }
         }
 
         ul.ohours {

@@ -41,6 +41,19 @@ section.home {
                 margin-bottom: 10px; 
             }
         }
+
+        .palm-tree {
+            position: absolute;
+            bottom: 67%; 
+            right: 9%;
+            width: 10%;
+            height: 23%;
+            background-image: url(./../images/palm_tree.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+            z-index: 10;
+        }
     
         .front-shop {
             position: absolute;
