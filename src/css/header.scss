@@ -3,9 +3,15 @@ header {
     display: flex;
     top: 0;
     left: 0;
+    right: 0;
     width: 100%;
     z-index: 10000;
     padding: 20px 150px;
+    box-sizing: border-box;
+
+    @media screen and (max-width: 1080px) {
+        padding: 20px 30px;
+    }
 
     .logo {
         flex: 1;
@@ -19,8 +25,36 @@ header {
         margin-right: 30px;
         transition: transform .2s ease-in-out;
 
+        @media screen and (max-width: 1080px) {
+            width: 80px;
+            height: 80px;
+            margin-right: 0;
+        }
+
         &:hover {
             transform: scale(1.1);
+        }
+    }
+
+    .dropdown-menu {
+        flex: 1;
+        display: block;
+        height: 30px;
+        padding: 30px 0;
+
+        @media screen and (min-width: 1080px) {
+            display: none;
+        }
+
+        &:after {
+            content: '\f0c9';
+            font-weight: 900;
+            font-family: 'Font Awesome Solid';
+            display: block;
+            width: 30px;
+            height: 30px;
+            font-size: 30px;
+            float: right;
         }
     }
 
@@ -29,10 +63,31 @@ header {
         display: block;
         list-style-type: none;
 
+        @media screen and (max-width: 1080px) {
+            position: fixed;
+            display: none;
+            top: 120px;
+            left: 5%;
+            right: 5%;
+            background-color: #ffffff;
+            width: 90%;
+            -webkit-box-shadow: 5px 5px 0px 0px rgba(0, 0, 0, 0.1);
+            -moz-box-shadow: 5px 5px 0px 0px rgba(0, 0, 0, 0.1);
+            box-shadow: 5px 5px 0px 0px rgba(0, 0, 0, 0.1);
+        }
+
         li {
             display: inline-block;
             padding: 0;
             margin: 0;
+
+            @media screen and (max-width: 1080px) {
+                display: block;
+
+                &:last-child a {
+                    padding: 10px 20px;
+                }
+            }
 
             a {
                 display: block;
@@ -46,6 +101,11 @@ header {
                 text-align: left;
                 transition: color .2s ease-in-out;
 
+                @media screen and (max-width: 1080px) {
+                    display: block;
+                    padding: 10px 20px 0 20px;
+                }
+
                 &:hover,
                 &.selected {
                     color: #1b1464;
@@ -55,16 +115,23 @@ header {
                     }
                 }
 
-                &:before {
-                    content: '';
-                    float: left;
-                    margin: 10px 14px 0 0;
-                    display: block;
-                    width: 10px;
-                    height: 10px;
-                    background-color: #f7737e;
-                    border-radius: 50%;
-                    transition: background-color .2s ease-in-out;
+                @media screen and (min-width: 1080px) {
+                    &:before {
+                        content: '';
+                        float: left;
+                        margin: 10px 14px 0 0;
+                        display: block;
+                        width: 10px;
+                        height: 10px;
+                        background-color: #f7737e;
+                        border-radius: 50%;
+                        transition: background-color .2s ease-in-out;
+
+                        @media screen and (max-width: 1080px) {
+                            width: 8px;
+                            height: 8px;
+                        }
+                    }
                 }
             }
         }

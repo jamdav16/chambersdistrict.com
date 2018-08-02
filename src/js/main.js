@@ -2,6 +2,18 @@ var moveLeft = null,
     moveRight = null, 
     bodyEle = document.scrollingElement || document.documentElement;
 
+window.onload = function(e){ 
+    document.getElementsByClassName("loading")[0].classList.add('hide');
+    document.getElementsByClassName("front-shop")[0].classList.add('loaded');
+    document.getElementsByClassName("building")[0].classList.add('loaded');
+    document.getElementsByClassName("rooftop-bar")[0].classList.add('loaded');
+    document.getElementsByClassName("background__sky")[0].classList.add('loaded');
+}
+
+document.body.addEventListener('touchmove', function(e) { 
+    e.preventDefault(); 
+});
+
 //
 //
 //
@@ -127,8 +139,8 @@ document.querySelectorAll('[data-go]').forEach(function(elem) {
     if(elem.dataset.go == 'about') {
 
         elem.addEventListener('click', function(event) {
-            scrollTo(-500, 0, 'lr');
-            setTimeout(function(){ scrollTo(-500, 0); }, 500);
+            scrollTo(-20, 500, 'lr');
+            setTimeout(function(){ scrollTo(-20, 500); }, 500);
 
             document.querySelectorAll('[data-go]').forEach(function(item) { item.classList.remove('selected'); });
 
@@ -232,4 +244,13 @@ document.querySelectorAll('[data-go]').forEach(function(elem) {
         });
 
     }
+});
+
+document.querySelector('.dropdown-menu').addEventListener('click', function(event) {
+    if(document.querySelector('header ul').style.display === 'none' || document.querySelector('header ul').style.display === '') {
+        document.querySelector('header ul').style.display = 'block';
+    } else {
+        document.querySelector('header ul').style.display = 'none';
+    }
+    event.preventDefault();
 });

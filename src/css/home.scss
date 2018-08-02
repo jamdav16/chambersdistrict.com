@@ -10,17 +10,37 @@ section.home {
 
     .background__sky {
         position: relative;
-        overflow: hidden;
         display: block;
-        min-width: 100%;
-        width: 300vh;
+        min-width: 220vh;
+        width: 220vh;
         height: 90%;
         min-height: calc(100% - 80px);
+
+        &.loaded:before {
+            -webkit-animation: onload 1.5s ease-in-out;
+            -moz-animation: onload 1.5s ease-in-out;
+            animation: onload 1.5s ease-in-out;
+        }
+
+        &:before {
+            content: '';
+            position: absolute;
+            bottom: -10vh;
+            left: 0;
+            display: block;
+            width: 110%;
+            height: 10vh;
+            background-image: url(./../images/building_shadow.png);
+            background-repeat: no-repeat;
+            background-size: 100%;
+            z-index: 100000;
+            margin-left: 6.8%;
+        }
     
         .rooftop-bar {
             position: absolute;
             bottom: -40%; 
-            left: 70vw;
+            left: 120vh;
             background-image: url(./../images/rooftop_bar.png);
             background-size: contain;
             background-repeat: no-repeat;
@@ -32,10 +52,12 @@ section.home {
             margin-bottom: 0;
             z-index: 5;
 
-            -webkit-animation: onload-up 1.5s ease-in-out forwards;
-            -moz-animation: onload-up 1.5s ease-in-out forwards;
-            animation: onload-up 1.5s ease-in-out forwards;
-            animation-delay: 1.5s;
+            &.loaded {
+                -webkit-animation: onload-up 1.5s ease-in-out forwards;
+                -moz-animation: onload-up 1.5s ease-in-out forwards;
+                animation: onload-up 1.5s ease-in-out forwards;
+                animation-delay: 1.5s;
+            }
     
             &:hover {
                 margin-bottom: 10px; 
@@ -68,7 +90,7 @@ section.home {
             height: 20%;
             display: block;
             z-index: 100;
-            margin-left: 1.5%;
+            margin-left: 2.3%;
             font-family: 'duke_fillfill', sans-serif;
             color: #ffffff;
             text-transform: uppercase;
@@ -79,9 +101,11 @@ section.home {
             text-align: center;
             transition: color .2s ease-in-out;
 
-            -webkit-animation: onload 1.5s ease-in-out;
-            -moz-animation: onload 1.5s ease-in-out;
-            animation: onload 1.5s ease-in-out;
+            &.loaded {
+                -webkit-animation: onload 1.5s ease-in-out;
+                -moz-animation: onload 1.5s ease-in-out;
+                animation: onload 1.5s ease-in-out;
+            }
     
             &:hover {
                 color: #f7f0e5;
@@ -102,9 +126,11 @@ section.home {
             margin-left: 9%;
             z-index: 10;
 
-            -webkit-animation: onload 1.5s ease-in-out;
-            -moz-animation: onload 1.5s ease-in-out;
-            animation: onload 1.5s ease-in-out;
+            &.loaded {
+                -webkit-animation: onload 1.5s ease-in-out;
+                -moz-animation: onload 1.5s ease-in-out;
+                animation: onload 1.5s ease-in-out;
+            }
 
             &:after {
                 content: '';
@@ -112,7 +138,7 @@ section.home {
                 position: absolute;
                 right: 0;
                 top: 0;
-                width: 23%;
+                width: 15%;
                 height: 100%;
                 background-color: rgba(238, 203, 172, 0.534);
                 border-left: 1px solid #000000;
@@ -136,7 +162,7 @@ section.home {
                 background-size: 100% 100%;
                 background-repeat: no-repeat;
                 background-position: center center;
-                width: 3.8%;
+                width: 5%;
                 height: 20%;
                 position: absolute;
                 top: 23%;
@@ -145,9 +171,9 @@ section.home {
                 $left: 6;
                 @for $i from 2 through 7 {
                     &:nth-child(#{$i+1}) {
-                        left: #{$left + 10}#{'%'};
+                        left: #{$left + 11.5}#{'%'};
                     }
-                    $left: $left + 10;
+                    $left: $left + 11.5;
                 }
             }
 
@@ -156,11 +182,11 @@ section.home {
                 background-size: 100% 100%;
                 background-repeat: no-repeat;
                 background-position: center center;
-                width: 3.5%;
+                width: 5%;
                 height: 20%;
                 position: absolute;
                 top: 23%;
-                right: 11.6%;
+                right: 4%;
                 z-index: 20;
             }
     
@@ -169,14 +195,14 @@ section.home {
                 background-size: 100% 80%;
                 background-repeat: no-repeat;
                 background-position: bottom center;
-                width: 5%;
+                width: 7%;
                 height: 40%;
                 position: absolute;
                 bottom: 3.5%;
-                left: 35.5%;
+                left: 39.5%;
     
                 &:nth-child(2n) {
-                    left: 55.5%;
+                    left: 62.5%;
                 }
             }
     
@@ -185,11 +211,11 @@ section.home {
                 background-size: 100% 80%;
                 background-repeat: no-repeat;
                 background-position: bottom center;
-                width: 7%;
+                width: 9%;
                 height: 46%;
                 position: absolute;
                 bottom: 0;
-                left: 24.5%;
+                left: 27%;
                 font-family: 'duke_fillfill', sans-serif;
                 color: #ffffff;
                 text-transform: uppercase;
@@ -203,7 +229,7 @@ section.home {
                 }
     
                 &:nth-child(2n) {
-                    left: 44.5%;
+                    left: 50%;
                 }
             }
     
@@ -216,19 +242,19 @@ section.home {
                 height: 25%;
                 position: absolute;
                 bottom: 0;  
-                left: 62%;
+                left: 71%;
             }
 
             .back-window {
                 background-image: url(./../images/window_back.png);
-                background-size: contain;
+                background-size: 100% 100%;
                 background-repeat: no-repeat;
                 background-position: bottom center;
-                width: 5%;
+                width: 6%;
                 height: 32%;
                 position: absolute;
                 bottom: 3.5%;  
-                right: 11%;
+                right: 4%;
                 z-index: 20;
             }
     

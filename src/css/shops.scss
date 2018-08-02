@@ -14,15 +14,14 @@ section.shop-three {
 
     .content {
         width: 89%;
-        height: calc(100% - 200px);
+        height: calc(100vh - 150px);
         max-height: 100%;
         position: absolute;
-        top: 200px;
+        top: 150px;
         bottom: 0;
         right: 0;
         background-color: rgba(255, 255, 255, 0.85);
         box-sizing: border-box;
-        padding: 50px;
         overflow: auto;
 
         h1 {
@@ -47,6 +46,7 @@ section.shop-three {
             font-size: 1em;
             line-height: 1.4em;
             margin: 0 0 25px 0;
+            max-width: 90%;
         }
 
         .logo {
@@ -59,6 +59,12 @@ section.shop-three {
 
             &.wingwing {
                 background-image: url(./../images/wing-wing-logo.png);
+                background-size: cover;
+                background-position: center center;
+            }
+
+            &.placeholder {
+                background-image: url(./../images/cd-placeholder.png);
                 background-size: cover;
                 background-position: center center;
             }
@@ -84,6 +90,7 @@ section.shop-three {
 
         .split-pane {
             display: flex;
+            margin: 50px;
 
             .split-content {
                 flex: 1;
@@ -92,7 +99,7 @@ section.shop-three {
             .split-side {
                 flex: 1;
                 margin: 0 0 0 50px;
-                max-width: 300px;
+                max-width: 350px;
                 text-align: center;
             }
         }

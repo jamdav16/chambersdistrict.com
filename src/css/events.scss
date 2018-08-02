@@ -1,7 +1,7 @@
 section.events {
     position: absolute;
     top: 0;
-    left: 140vw;
+    left: 120%;
     padding: 0;
     margin: 0;
     display: block;
@@ -17,14 +17,14 @@ section.events {
 
     .content {
         position: absolute;
-        right: 10%;
-        top: 200px;
-        bottom: 150px;
+        right: 5%;
+        top: 150px;
+        bottom: 120px;
         padding: 25px;
-        width: 80%;
+        width: 75vw;
         overflow: auto;
         background-color: rgba(255, 255, 255, 0.95);
-        z-index: 10000000;
+        z-index: 1000;
         transition: height 1s;
         -webkit-box-shadow: 5px 5px 0px 0px rgba(0,0,0,0.1);
         -moz-box-shadow: 5px 5px 0px 0px rgba(0,0,0,0.1);

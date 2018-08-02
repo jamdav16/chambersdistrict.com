@@ -1,9 +1,15 @@
 @import 'main';
-@import 'header';
 @import 'keyframes';
 
+/* Font Awesome */
+@import '_variables';
+@import '_shims';
+
+@import 'header';
 @import 'home';
 @import 'about';
 @import 'rooftopbar';
 @import 'events';
 @import 'shops';
+
+@import 'mobile';

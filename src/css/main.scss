@@ -15,6 +15,22 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Font Awesome';
+    font-style: normal;
+    font-weight: 400;
+    src: url('./../fonts/fa-regular-400.woff2') format('woff2'),
+         url('./../fonts/fa-regular-400.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Font Awesome Solid';
+    font-style: normal;
+    font-weight: 900;
+    src: url('./../fonts/fa-solid-900.woff2') format('woff2'),
+         url('./../fonts/fa-solid-900.woff') format('woff'),
+}
+
 html {
     padding: 0;
     margin: 0;
@@ -49,6 +65,28 @@ body {
     background: -webkit-linear-gradient(top, #befcf7 50%,#5bd2ff 100%);
     background: linear-gradient(to bottom, #befcf7 50%,#5bd2ff 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#befcf7', endColorstr='#5bd2ff',GradientType=0 );
+}
+
+.loading {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000000;
+    background-color: #f7737e;
+    background-image: url(./../images/loading.gif);
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    &.hide {
+        -webkit-animation: loading-away 1s ease-in-out forwards;
+        -moz-animation: loading-away 1s ease-in-out forwards;
+        animation: loading-away 1s ease-in-out forwards;
+    }
 }
 
 b.cloud {
@@ -149,33 +187,17 @@ i.pigeon {
 
 .background__land {
     position: relative;
+    bottom: 0;
+    left: 0;
     overflow: hidden;
     display: block;
     min-width: 100%;
-    width: calc(100% + 120vw);
+    width: calc(100% + 200vw);
     height: 10%;
     min-height: 80px;
     background-color: #f7ce6b;
     z-index: 1;
-
-    &:after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        display: block;
-        width: 166vw;
-        height: 120px;
-        background-image: url(./../images/building_shadow.png);
-        background-repeat: no-repeat;
-        background-size: 100%;
-        z-index: 1000;
-        margin-left: 11.5vw;
-
-        -webkit-animation: onload 1.5s ease-in-out;
-        -moz-animation: onload 1.5s ease-in-out;
-        animation: onload 1.5s ease-in-out;
-    }
+    margin: 0 0 0 -100vw;
 }
 
 #larr__arrow {
