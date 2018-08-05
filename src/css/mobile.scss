@@ -5,4 +5,8 @@
         display: none !important;
     }
 
+    section:not(.home) {
+        display: none;
+    }
+
 }
