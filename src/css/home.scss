@@ -25,11 +25,11 @@ section.home {
         &:before {
             content: '';
             position: absolute;
-            bottom: -10vh;
+            bottom: -5vh;
             left: 0;
             display: block;
             width: 110%;
-            height: 10vh;
+            height: 5vh;
             background-image: url(./../images/building_shadow.png);
             background-repeat: no-repeat;
             background-size: 100%;
