@@ -10,10 +10,6 @@ window.onload = function(e){
     document.getElementsByClassName("background__sky")[0].classList.add('loaded');
 }
 
-document.body.addEventListener('touchmove', function(e) { 
-    e.preventDefault(); 
-});
-
 //
 //
 //
@@ -53,167 +49,185 @@ Math.easeInOutQuad = function (t, b, c, d) {
 //
 //
 
-document.getElementById("rarr__arrow").addEventListener("mouseover", function() {
-    moveRight = setInterval(function () {
-        if((bodyEle.clientWidth + bodyEle.scrollLeft) <= bodyEle.scrollWidth) {
-            bodyEle.scrollLeft += 2;
-        }
-    }, 0);
-});
+// Detect if its a mobile device
+var isMobile = window.matchMedia("only screen and (max-width: 640px)");
 
-document.getElementById("rarr__arrow").addEventListener("mouseout", function() {
-    clearInterval(moveRight);
-});
+if (!isMobile.matches) {
 
-document.getElementById("larr__arrow").addEventListener("mouseover", function() {
-    moveLeft = setInterval(function () {
-        if((bodyEle.clientWidth + bodyEle.scrollLeft) <= bodyEle.scrollWidth) {
-            bodyEle.scrollLeft -= 2;
-        }
-    }, 0);
-});
-
-document.getElementById("larr__arrow").addEventListener("mouseout", function() {
-    clearInterval(moveLeft);
-});
-
-function arrowUpdate() {
-    if(bodyEle.scrollLeft == 0 || bodyEle.scrollTop != 0 || document.querySelector("section.home").style.marginTop == '65vh' || document.querySelector("section.home").style.marginLeft == '70vw') {
-        document.getElementById("larr__arrow").style.display = 'none';
-    } else {
-        document.getElementById("larr__arrow").style.display = 'block';
-    }
-    if((bodyEle.clientWidth + bodyEle.scrollLeft) == bodyEle.scrollWidth || bodyEle.scrollTop != 0 || document.querySelector("section.home").style.marginTop == '65vh' || document.querySelector("section.home").style.marginLeft == '70vw') {
-        document.getElementById("rarr__arrow").style.display = 'none';
-    } else {
-        document.getElementById("rarr__arrow").style.display = 'block';
-    }
-}
-
-window.onscroll = function (e) {
-    var elements = document.querySelectorAll('section');
-    for (var i = 0; i < elements.length; i++) {
-        
-        if(elements[i].offsetLeft == bodyEle.scrollLeft && elements[i].offsetTop == bodyEle.scrollTop) {
-            document.querySelector('[data-go="' + elements[i].className + '"]').classList.add('selected');
-        } else {
-            document.querySelector('[data-go="' + elements[i].className + '"]').classList.remove('selected');
-        }
-        arrowUpdate();
-    }
-}
-
-var myitem = window;
-if (window.addEventListener) {
-    window.addEventListener("mousewheel", MouseWheelHandler, false);
-    window.addEventListener("DOMMouseScroll", MouseWheelHandler, false);
-} else {
-    window.attachEvent("onmousewheel", MouseWheelHandler);
-}
-
-function MouseWheelHandler(e) {
-    // cross-browser wheel delta
-    var e = window.event || e; // old IE support
-    var delta = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)));
-
-    if(document.querySelector("section.home").style.marginTop != '65vh' && document.querySelector("section.home").style.marginLeft != '70vw' && bodyEle.scrollTop == 0) {
-
-        if(delta !== 1) {
+    document.getElementById("rarr__arrow").addEventListener("mouseover", function() {
+        moveRight = setInterval(function () {
             if((bodyEle.clientWidth + bodyEle.scrollLeft) <= bodyEle.scrollWidth) {
-                bodyEle.scrollLeft += 100;
+                bodyEle.scrollLeft += 2;
             }
-        } else {
+        }, 0);
+    });
+    
+    document.getElementById("rarr__arrow").addEventListener("mouseout", function() {
+        clearInterval(moveRight);
+    });
+    
+    document.getElementById("larr__arrow").addEventListener("mouseover", function() {
+        moveLeft = setInterval(function () {
             if((bodyEle.clientWidth + bodyEle.scrollLeft) <= bodyEle.scrollWidth) {
-                bodyEle.scrollLeft -= 100;
+                bodyEle.scrollLeft -= 2;
             }
+        }, 0);
+    });
+    
+    document.getElementById("larr__arrow").addEventListener("mouseout", function() {
+        clearInterval(moveLeft);
+    });
+    
+    function arrowUpdate() {
+        if(bodyEle.scrollLeft == 0 || bodyEle.scrollTop != 0 || document.querySelector("section.home").style.marginTop == '65vh' || document.querySelector("section.home").style.marginLeft == '70vw') {
+            document.getElementById("larr__arrow").style.display = 'none';
+        } else {
+            document.getElementById("larr__arrow").style.display = 'block';
         }
-
+        if((bodyEle.clientWidth + bodyEle.scrollLeft) == bodyEle.scrollWidth || bodyEle.scrollTop != 0 || document.querySelector("section.home").style.marginTop == '65vh' || document.querySelector("section.home").style.marginLeft == '70vw') {
+            document.getElementById("rarr__arrow").style.display = 'none';
+        } else {
+            document.getElementById("rarr__arrow").style.display = 'block';
+        }
     }
-}
-
-//
-//
-//
-
-document.querySelectorAll('[data-go]').forEach(function(elem) {
-    if(elem.dataset.go == 'about') {
-
-        elem.addEventListener('click', function(event) {
-            scrollTo(-20, 500, 'lr');
-            setTimeout(function(){ scrollTo(-20, 500); }, 500);
-
-            document.querySelectorAll('[data-go]').forEach(function(item) { item.classList.remove('selected'); });
-
-            document.querySelector('[data-go="' + this.dataset.go + '"]').classList.add('selected');
-
-            setTimeout(function(){
-                document.querySelector("section.home").style.marginLeft = '70vw';
-                document.querySelector("section.home").style.marginTop = '0px';
-                arrowUpdate();
-            }, 1000);
-
-            setTimeout(function(){
-                document.querySelector(".content__about").style.height = '60%';
-            }, 2000);
-
-            if(document.querySelector(".content__rooftop-bar").style.height == '60%') {
-                document.querySelector(".content__rooftop-bar").style.height = '0';
-            }
-
-            event.preventDefault();
-        });
-
-    } else if(elem.dataset.go == 'rooftop-bar') {
-
-        elem.addEventListener('click', function(event) {
-            scrollTo(-20, 500, 'lr');
-            setTimeout(function(){ scrollTo(-20, 500); }, 500);
-
-            document.querySelectorAll('[data-go]').forEach(function(item) { item.classList.remove('selected'); });
-
-            document.querySelector('[data-go="about"]').classList.remove('selected');
-            document.querySelector('[data-go="' + this.dataset.go + '"]').classList.add('selected');
-
-            setTimeout(function(){
-                document.querySelector("section.home").style.marginTop = '65vh';
-                document.querySelector("section.home").style.marginLeft = '0px';
-                document.querySelector(".content__about").style.height = '0';
-                arrowUpdate();
-            }, 1000);
-
-            setTimeout(function(){
-                document.querySelector(".content__rooftop-bar").style.height = '60%';
-            }, 2000);
-
-            if(document.querySelector(".content__about").style.height == '60%') {
-                document.querySelector(".content__about").style.height = '0';
-            }
-
-            event.preventDefault();
-        });
-
-    } else {
-
-        elem.addEventListener('click', function(event) {
-            var section = document.querySelector("section."+this.dataset.go);
-
-            // history.pushState({}, this.innerText, this.href);
-
-            document.querySelectorAll('[data-go]').forEach(function(item) { item.classList.remove('selected'); });
+    
+    window.onscroll = function (e) {
+        var elements = document.querySelectorAll('section');
+        for (var i = 0; i < elements.length; i++) {
             
-            if(document.querySelector(".content__rooftop-bar").style.height == '60%') {
-                document.querySelector(".content__rooftop-bar").style.height = '0';
+            if(elements[i].offsetLeft == bodyEle.scrollLeft && elements[i].offsetTop == bodyEle.scrollTop) {
+                document.querySelector('[data-go="' + elements[i].className + '"]').classList.add('selected');
+            } else {
+                document.querySelector('[data-go="' + elements[i].className + '"]').classList.remove('selected');
             }
-
-            if(document.querySelector(".content__about").style.height == '60%') {
-                document.querySelector(".content__about").style.height = '0';
+            arrowUpdate();
+        }
+    }
+    
+    var myitem = window;
+    if (window.addEventListener) {
+        window.addEventListener("mousewheel", MouseWheelHandler, false);
+        window.addEventListener("DOMMouseScroll", MouseWheelHandler, false);
+    } else {
+        window.attachEvent("onmousewheel", MouseWheelHandler);
+    }
+    
+    function MouseWheelHandler(e) {
+        // cross-browser wheel delta
+        var e = window.event || e; // old IE support
+        var delta = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)));
+    
+        if(document.querySelector("section.home").style.marginTop != '65vh' && document.querySelector("section.home").style.marginLeft != '70vw' && bodyEle.scrollTop == 0) {
+    
+            if(delta !== 1) {
+                if((bodyEle.clientWidth + bodyEle.scrollLeft) <= bodyEle.scrollWidth) {
+                    bodyEle.scrollLeft += 100;
+                }
+            } else {
+                if((bodyEle.clientWidth + bodyEle.scrollLeft) <= bodyEle.scrollWidth) {
+                    bodyEle.scrollLeft -= 100;
+                }
             }
+    
+        }
+    }
 
-            if(document.querySelector("section.home").style.marginTop == '65vh' || document.querySelector("section.home").style.marginLeft == '70vw') {
-                document.querySelector("section.home").style.marginTop = '0px';
-                document.querySelector("section.home").style.marginLeft = '0px';
+    //
+    // DATA GO FOR DESKTOP
+    //
+
+    document.querySelectorAll('[data-go]').forEach(function(elem) {
+        if(elem.dataset.go == 'about') {
+
+            elem.addEventListener('click', function(event) {
+                scrollTo(-20, 500, 'lr');
+                setTimeout(function(){ scrollTo(-20, 500); }, 500);
+
+                document.querySelectorAll('[data-go]').forEach(function(item) { item.classList.remove('selected'); });
+
+                document.querySelector('[data-go="' + this.dataset.go + '"]').classList.add('selected');
+
+                setTimeout(function(){
+                    document.querySelector("section.home").style.marginLeft = '70vw';
+                    document.querySelector("section.home").style.marginTop = '0px';
+                    arrowUpdate();
+                }, 1000);
+
+                setTimeout(function(){
+                    document.querySelector(".content__about").style.height = '60%';
+                }, 2000);
+
+                if(document.querySelector(".content__rooftop-bar").style.height == '60%') {
+                    document.querySelector(".content__rooftop-bar").style.height = '0';
+                }
+
+                event.preventDefault();
+            });
+
+        } else if(elem.dataset.go == 'rooftop-bar') {
+
+            elem.addEventListener('click', function(event) {
+                scrollTo(-20, 500, 'lr');
+                setTimeout(function(){ scrollTo(-20, 500); }, 500);
+
+                document.querySelectorAll('[data-go]').forEach(function(item) { item.classList.remove('selected'); });
+
+                document.querySelector('[data-go="about"]').classList.remove('selected');
+                document.querySelector('[data-go="' + this.dataset.go + '"]').classList.add('selected');
+
+                setTimeout(function(){
+                    document.querySelector("section.home").style.marginTop = '65vh';
+                    document.querySelector("section.home").style.marginLeft = '0px';
+                    document.querySelector(".content__about").style.height = '0';
+                    arrowUpdate();
+                }, 1000);
+
+                setTimeout(function(){
+                    document.querySelector(".content__rooftop-bar").style.height = '60%';
+                }, 2000);
+
+                if(document.querySelector(".content__about").style.height == '60%') {
+                    document.querySelector(".content__about").style.height = '0';
+                }
+
+                event.preventDefault();
+            });
+
+        } else {
+
+            elem.addEventListener('click', function(event) {
+                var section = document.querySelector("section."+this.dataset.go);
+
+                // history.pushState({}, this.innerText, this.href);
+
+                document.querySelectorAll('[data-go]').forEach(function(item) { item.classList.remove('selected'); });
                 
-                setTimeout(function() {
+                if(document.querySelector(".content__rooftop-bar").style.height == '60%') {
+                    document.querySelector(".content__rooftop-bar").style.height = '0';
+                }
+
+                if(document.querySelector(".content__about").style.height == '60%') {
+                    document.querySelector(".content__about").style.height = '0';
+                }
+
+                if(document.querySelector("section.home").style.marginTop == '65vh' || document.querySelector("section.home").style.marginLeft == '70vw') {
+                    document.querySelector("section.home").style.marginTop = '0px';
+                    document.querySelector("section.home").style.marginLeft = '0px';
+                    
+                    setTimeout(function() {
+
+                        if(bodyEle.scrollLeft == 0 && section.offsetLeft == 0) {
+                            scrollTo(section.offsetTop, 500);
+                        } else if(bodyEle.scrollLeft == 0 && section.offsetLeft > 0) {
+                            scrollTo(section.offsetTop, 500);
+                            setTimeout(function(){ scrollTo(section.offsetLeft, 500, 'lr'); }, 500);
+                        } else {
+                            scrollTo(section.offsetLeft - 20, 500, 'lr');
+                            setTimeout(function(){ scrollTo(section.offsetTop, 500); }, 500);
+                        }
+
+                    }, 1000);
+                } else {
 
                     if(bodyEle.scrollLeft == 0 && section.offsetLeft == 0) {
                         scrollTo(section.offsetTop, 500);
@@ -225,32 +239,64 @@ document.querySelectorAll('[data-go]').forEach(function(elem) {
                         setTimeout(function(){ scrollTo(section.offsetTop, 500); }, 500);
                     }
 
-                }, 1000);
+                }
+
+                event.preventDefault();
+            });
+
+        }
+    });
+
+} else {
+
+    //
+    // DATA GO FOR MOBILE
+    //
+
+    document.querySelector('.dropdown-menu').addEventListener('click', function(event) {
+        if(document.querySelector('header ul').style.display === 'none' || document.querySelector('header ul').style.display === '') {
+            document.querySelector('header ul').style.display = 'block';
+        } else {
+            document.querySelector('header ul').style.display = 'none';
+        }
+        event.preventDefault();
+    });
+
+    document.querySelectorAll('[data-go]').forEach(function(elem) {
+
+        elem.addEventListener('click', function(event) {
+
+            document.querySelectorAll('section, content__rooftop-bar, content__about').forEach(function(item) { item.classList.remove('sectvisib'); });
+
+            // Close the menu
+            document.querySelector('header ul').style.display = 'none';
+
+            if(this.dataset.go == 'home') {
+
+            } else if(this.dataset.go == 'rooftop-bar') {
+
+                var section = document.querySelector(".content__rooftop-bar");
+
+                section.classList.add('sectvisib');
+
+            } else if(this.dataset.go == 'about') {
+
+                var section = document.querySelector(".content__about");
+
+                section.classList.add('sectvisib');
+
             } else {
 
-                if(bodyEle.scrollLeft == 0 && section.offsetLeft == 0) {
-                    scrollTo(section.offsetTop, 500);
-                } else if(bodyEle.scrollLeft == 0 && section.offsetLeft > 0) {
-                    scrollTo(section.offsetTop, 500);
-                    setTimeout(function(){ scrollTo(section.offsetLeft, 500, 'lr'); }, 500);
-                } else {
-                    scrollTo(section.offsetLeft - 20, 500, 'lr');
-                    setTimeout(function(){ scrollTo(section.offsetTop, 500); }, 500);
-                }
+                var section = document.querySelector("section."+this.dataset.go);
+
+                section.classList.add('sectvisib');
 
             }
 
             event.preventDefault();
+
         });
 
-    }
-});
+    });
 
-document.querySelector('.dropdown-menu').addEventListener('click', function(event) {
-    if(document.querySelector('header ul').style.display === 'none' || document.querySelector('header ul').style.display === '') {
-        document.querySelector('header ul').style.display = 'block';
-    } else {
-        document.querySelector('header ul').style.display = 'none';
-    }
-    event.preventDefault();
-});
+}
