@@ -67,6 +67,10 @@ body {
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#befcf7', endColorstr='#5bd2ff',GradientType=0 );
 }
 
+.closemodal {
+    display: none;
+}
+
 .loading {
     display: block;
     width: 100%;

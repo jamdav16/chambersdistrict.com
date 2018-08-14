@@ -299,4 +299,16 @@ if (!isMobile.matches) {
 
     });
 
+    document.querySelectorAll('.closemodal').forEach(function(elem) {
+        
+        elem.addEventListener('click', function(event) {
+
+            document.querySelectorAll('section, content__rooftop-bar, content__about').forEach(function(item) { item.classList.remove('sectvisib'); });
+
+            event.preventDefault();
+
+        });
+
+    });
+
 }
