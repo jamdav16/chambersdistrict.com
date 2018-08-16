@@ -266,7 +266,7 @@ if (!isMobile.matches) {
 
         elem.addEventListener('click', function(event) {
 
-            document.querySelectorAll('section, content__rooftop-bar, content__about').forEach(function(item) { item.classList.remove('sectvisib'); });
+            document.querySelectorAll('section, .content__rooftop-bar, .content__about').forEach(function(item) { item.classList.remove('sectvisib'); });
 
             // Close the menu
             document.querySelector('header ul').style.display = 'none';
@@ -303,7 +303,7 @@ if (!isMobile.matches) {
         
         elem.addEventListener('click', function(event) {
 
-            document.querySelectorAll('section, content__rooftop-bar, content__about').forEach(function(item) { item.classList.remove('sectvisib'); });
+            document.querySelectorAll('section, .content__rooftop-bar, .content__about').forEach(function(item) { item.classList.remove('sectvisib'); });
 
             event.preventDefault();
 
