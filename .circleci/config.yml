@@ -1,13 +1,13 @@
 version: 2
 jobs:
-   build:
-     docker:
-       - image: circleci/node:latest
-     steps:
-       - checkout
-       - run: npm install
-       - run: webpack
-       - run: echo "DONE!"
+  build:
+    docker:
+      - image: circleci/node:latest
+    steps:
+      - checkout
+      - run: npm install
+      - run: webpack
+      - run: echo "DONE!"
 
 workflows:
   version: 2
@@ -17,4 +17,4 @@ workflows:
           filters:
             branches:
               only:
-- master
+                - master
