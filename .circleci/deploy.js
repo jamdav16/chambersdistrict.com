@@ -8,8 +8,7 @@ var config = {
     port: 21,
     localRoot: __dirname + "/../dist/",
     remoteRoot: "/staging.chambersdistrict.com/",
-    include: ['*'],
-    deleteRemote: true
+    include: ['*']
 }
     
 ftpDeploy.deploy(config, function(err) {
