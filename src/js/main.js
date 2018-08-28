@@ -145,6 +145,8 @@ if (!isMobile.matches) {
 
                 history.pushState({}, this.innerText, this.href);
                 document.title = this.innerText.toLowerCase().replace(/\b\w/g, function(l){ return l.toUpperCase() }) + ' - Chambers District Footscray';
+                $('meta[property="og:title"]').attr('content', this.innerText.toLowerCase().replace(/\b\w/g, function(l){ return l.toUpperCase() }) + ' - Chambers District Footscray');
+                $('meta[property="og:url"]').attr('content', this.href);
 
                 document.querySelectorAll('[data-go]').forEach(function(item) { item.classList.remove('selected'); });
 
@@ -175,6 +177,8 @@ if (!isMobile.matches) {
 
                 history.pushState({}, this.innerText, this.href);
                 document.title = this.innerText.toLowerCase().replace(/\b\w/g, function(l){ return l.toUpperCase() }) + ' - Chambers District Footscray';
+                $('meta[property="og:title"]').attr('content', this.innerText.toLowerCase().replace(/\b\w/g, function(l){ return l.toUpperCase() }) + ' - Chambers District Footscray');
+                $('meta[property="og:url"]').attr('content', this.href);
 
                 document.querySelectorAll('[data-go]').forEach(function(item) { item.classList.remove('selected'); });
 
@@ -206,6 +210,8 @@ if (!isMobile.matches) {
 
                 history.pushState({}, this.innerText, this.href);
                 document.title = this.innerText ? this.innerText.toLowerCase().replace(/\b\w/g, function(l){ return l.toUpperCase() }) + ' - Chambers District Footscray' : 'Chambers District - Maddern Square, Footscray';
+                $('meta[property="og:title"]').attr('content', this.innerText ? this.innerText.toLowerCase().replace(/\b\w/g, function(l){ return l.toUpperCase() }) + ' - Chambers District Footscray' : 'Chambers District - Maddern Square, Footscray');
+                $('meta[property="og:url"]').attr('content', this.href);
 
                 document.querySelectorAll('[data-go]').forEach(function(item) { item.classList.remove('selected'); });
                 
