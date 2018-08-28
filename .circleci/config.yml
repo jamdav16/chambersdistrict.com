@@ -10,6 +10,7 @@ jobs:
       - run: sudo npm install webpack-cli -g
       - run: sudo npm install webpack -g
       - run: webpack
+      - run: node .circleci/deploy.js
       - run: echo "DONE!"
 
 workflows:
