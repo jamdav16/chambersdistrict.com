@@ -132,6 +132,10 @@ if (!isMobile.matches) {
         }
     }
 
+    if(document.location.pathname != '/') {
+        $('a[href="' + document.location.pathname + '"]').trigger('click');
+    }
+
     //
     // DATA GO FOR DESKTOP
     //
