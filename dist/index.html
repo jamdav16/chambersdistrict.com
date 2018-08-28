@@ -11,6 +11,15 @@
         <link rel="icon" href="./favicon.ico" type="image/x-icon">
     </head>
     <body>
+        <div id="fb-root"></div>
+        <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.1&appId=1986037591632208';
+        fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+
         <div class="loading"></div>
 
         <header>
@@ -18,9 +27,9 @@
             <a href="" class="dropdown-menu"></a>
             <ul>
                 <li><a href="/events/" data-go="events">Events</a></li>
-                <li><a href="/wing-wing/" data-go="wing-wing">Wing Wing</a></li>
-                <li><a href="/barber/" data-go="shop-two">Barber</a></li>
-                <li><a href="/special-request/" data-go="shop-three">Special Request</a></li>
+                <li><a href="/shop-one/" data-go="shop-one">Tenancy A</a></li>
+                <li><a href="/shop-two/" data-go="shop-two">Tenancy B</a></li>
+                <li><a href="/counterweight/" data-go="shop-three">Counterweight</a></li>
                 <li><a href="/rooftop-bar/" data-go="rooftop-bar">Rooftop Bar</a></li>
                 <li><a href="/about/" data-go="about">About</a></li>
                 <li><a href="/blog/" target="_blank">Blog</a></li>
@@ -89,7 +98,7 @@
 
                 <a href="/rooftop-bar/" data-go="rooftop-bar" class="rooftop-bar"></a>
 
-                <a href="/wing-wing/" data-go="wing-wing" class="front-shop">Wing Wing Chicken</a>
+                <a href="/shop-one/" data-go="shop-one" class="front-shop">Tenancy A</a>
 
                 <div class="palm-tree"></div>
 
@@ -107,8 +116,8 @@
 
                     <div class="top-back-window"></div>
 
-                    <a class="shop-marquee" href="/shop-three/" data-go="shop-three">Special Request</a>
-                    <a class="shop-marquee" href="/shop-two/" data-go="shop-two">Barber</a>
+                    <a class="shop-marquee" href="/shop-three/" data-go="shop-three">Counterweight</a>
+                    <a class="shop-marquee" href="/shop-two/" data-go="shop-two">Tenancy B</a>
 
                     <div class="large-window"></div>
                     <div class="large-window"></div>
@@ -125,6 +134,8 @@
             <div class="content">
                 <a href="" class="closemodal"><i></i></a>
 
+                <div class="img_box maribyrnong"></div>
+
                 <h1>Events</h1>
 
                 <p>Celebrating the vibrant culture that “The Festival City” has to offer, Chambers District brings together the west’s best local designers, artists and musicians in a series of curated events, markets and mini festivals.</p>
@@ -134,47 +145,38 @@
                 <ul>
                     <li>Creators Arts Market</li>
                     <li>Footscray’s First Bulldog Festival</li>
-                    <li>Creators Market - Music</li>
+                    <li>Music Events</li>
                     <li>and many more.</li>
                 </ul>
-
-                <br /><br /><br />
-                    
-                <p>Watch this space for details.</p>
             </div>
         </section>
 
-        <section class="wing-wing">
+        <section class="shop-one">
             <div class="content">
                 <a href="" class="closemodal"><i></i></a>
 
                 <div class="split-pane">
                     <div class="split-content">
 
-                        <h1>Wing Wing Chicken</h1>
+                        <h1>Tenancy A</h1>
 
-                        <p>Wing Wing chicken and beer -  a Japanese inspired fried chicken and beer, izakaya style restaurant. With a menu and concept created by the poultry master and brain child behind Wing Wing, Chey Sturm.</p>
-
-                        <br />
-
-                        <!-- InstaWidget -->
-                        <a href="https://instawidget.net/v/user/wing.wing.chicken" id="link-a518d05e63b89b8bf8916fcd2a4afb851315ec0bf502c600f874997d71a4f4d1">@wing.wing.chicken</a>
-                        <script src="https://instawidget.net/js/instawidget.js?u=a518d05e63b89b8bf8916fcd2a4afb851315ec0bf502c600f874997d71a4f4d1&width=700px"></script>
+                        <p>With all the foot traffic of the Footscray mall, your business will have the most exposure possible on this <b>48 m<sup>2</sup></b> space!</p>
+                        <p>Please contact <a href="mailto:leasing@chambersdistrict.com?subject=Tenancy+A+Leasing">leasing@chambersdistrict.com</a> for all leasing enquiries.</p>
 
                     </div>
                     <div class="split-side">
 
-                        <div class="logo wingwing"></div>
+                        <div class="logo placeholder"></div>
 
                         <h3>Opening Hours</h3>
                         <ul class="ohours">
-                            <li><b>MON</b> <i>Closed</i></li>
-                            <li><b>TUE</b> <i>Closed</i></li>
-                            <li><b>WED</b> <i>12PM - 10PM</i></li>
-                            <li><b>THU</b> <i>12PM - 10PM</i></li>
-                            <li><b>FRI</b> <i>12PM - 10PM</i></li>
-                            <li><b>SAT</b> <i>12PM - 10PM</i></li>
-                            <li><b>SUN</b> <i>12PM - 10PM</i></li>
+                            <li><b>MON</b> <i>TBA</i></li>
+                            <li><b>TUE</b> <i>TBA</i></li>
+                            <li><b>WED</b> <i>TBA</i></li>
+                            <li><b>THU</b> <i>TBA</i></li>
+                            <li><b>FRI</b> <i>TBA</i></li>
+                            <li><b>SAT</b> <i>TBA</i></li>
+                            <li><b>SUN</b> <i>TBA</i></li>
                         </ul>
 
                     </div>
@@ -190,9 +192,10 @@
                 <div class="split-pane">
                     <div class="split-content">
 
-                        <h1>Barber</h1>
+                        <h1>Tenancy B</h1>
 
-                        <p>To fade or not to fade, why not a close shave?</p>
+                        <p>With all the foot traffic of the Footscray mall, your business will have the most exposure possible on this <b>46 m<sup>2</sup></b> space!</p>
+                        <p>Please contact <a href="mailto:leasing@chambersdistrict.com?subject=Tenancy+B+Leasing">leasing@chambersdistrict.com</a> for all leasing enquiries.</p>
 
                     </div>
                     <div class="split-side">
@@ -201,13 +204,13 @@
 
                         <h3>Opening Hours</h3>
                         <ul class="ohours">
-                            <li><b>MON</b> <i>Closed</i></li>
-                            <li><b>TUE</b> <i>9AM - 6:30PM</i></li>
-                            <li><b>WED</b> <i>9AM - 6:30PM</i></li>
-                            <li><b>THU</b> <i>9AM - 6:30PM</i></li>
-                            <li><b>FRI</b> <i>9AM - 6:30PM</i></li>
-                            <li><b>SAT</b> <i>9AM - 6:30PM</i></li>
-                            <li><b>SUN</b> <i>11AM - 4PM</i></li>
+                            <li><b>MON</b> <i>TBA</i></li>
+                            <li><b>TUE</b> <i>TBA</i></li>
+                            <li><b>WED</b> <i>TBA</i></li>
+                            <li><b>THU</b> <i>TBA</i></li>
+                            <li><b>FRI</b> <i>TBA</i></li>
+                            <li><b>SAT</b> <i>TBA</i></li>
+                            <li><b>SUN</b> <i>TBA</i></li>
                         </ul>
 
                     </div>
@@ -223,11 +226,15 @@
                 <div class="split-pane">
                     <div class="split-content">
 
-                        <h1>Special Request</h1>
+                        <h1>Counterweight Vinyl & Espresso</h1>
 
-                        <p>Who said vinyl is dead? Setting up home in Chambers District, is Special Request, Footscrays first and finest record store.</p>
+                        <p>Who said vinyl is dead? Setting up home in Chambers District, is Counterweight Vinyl & Espresso, Footscray's first and finest record store.</p>
 
                         <p>And if finding a rare EP ain't your thing, then swing by for your caffeine fix at their espresso bar.</p>
+
+                        <br />
+
+                        <div class="fb-page" data-href="http://www.facebook.com/counterweightfootscray/" data-height="200" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="http://www.facebook.com/counterweightfootscray/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/counterweightfootscray/">Counterweight Vinyl &amp; Espresso</a></blockquote></div>
 
                     </div>
                     <div class="split-side">

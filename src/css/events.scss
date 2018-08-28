@@ -58,5 +58,18 @@ section.events {
                 margin: 0 0 10px 25px;
             }
         }
+
+        .img_box {
+            float: right;
+            margin: 0 0 25px 25px;
+            width: 240px;
+            height: 300px;
+            background-repeat: no-repeat;
+            background-size: contain;
+
+            &.maribyrnong {
+                background-image: url(../images/mcc-logo.png);
+            }
+        }
     }
 }
