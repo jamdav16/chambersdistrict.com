@@ -9,8 +9,8 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 
 @font-face {
     font-family: 'duke_fillfill';
-    src: url('~src/fonts/duke_fill-webfont.woff2') format('woff2'),
-         url('~src/fonts/duke_fill-webfont.woff') format('woff');
+    src: url('../fonts/duke_fill-webfont.woff2') format('woff2'),
+         url('../fonts/duke_fill-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
@@ -19,16 +19,16 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     font-family: 'Font Awesome';
     font-style: normal;
     font-weight: 400;
-    src: url('~src/fonts/fa-regular-400.woff2') format('woff2'),
-         url('~src/fonts/fa-regular-400.woff') format('woff');
+    src: url('../fonts/fa-regular-400.woff2') format('woff2'),
+         url('../fonts/fa-regular-400.woff') format('woff');
 }
 
 @font-face {
     font-family: 'Font Awesome Solid';
     font-style: normal;
     font-weight: 900;
-    src: url('~src/fonts/fa-solid-900.woff2') format('woff2'),
-         url('~src/fonts/fa-solid-900.woff') format('woff'),
+    src: url('../fonts/fa-solid-900.woff2') format('woff2'),
+         url('../fonts/fa-solid-900.woff') format('woff'),
 }
 
 html {

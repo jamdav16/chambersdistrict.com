@@ -45,7 +45,8 @@ module.exports = {
         }]
     },
     output: {
-        filename: 'script.js'
+        filename: 'script.js',
+        publicPath: '/'
     },
     devServer: {
         contentBase: "./dist",
