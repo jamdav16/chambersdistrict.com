@@ -5,8 +5,10 @@ jobs:
       - image: circleci/node:latest
     steps:
       - checkout
+      - run: sudo apt-get update; sudo apt-get install ruby-sass
       - run: npm install
-      - run: sudo npm i webpack-cli -g
+      - run: sudo npm install webpack-cli -g
+      - run: sudo npm install webpack -g
       - run: webpack
       - run: echo "DONE!"
 
