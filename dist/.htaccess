@@ -1,5 +1,12 @@
+Options +FollowSymLinks
 RewriteEngine On
 RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-FallbackResource /index.html
+RewriteCond %{REQUEST_URI} !=/index.html
+RewriteCond %{REQUEST_URI} !.*\.png$ [NC]
+RewriteCond %{REQUEST_URI} !.*\.jpg$ [NC]
+RewriteCond %{REQUEST_URI} !.*\.css$ [NC]
+RewriteCond %{REQUEST_URI} !.*\.gif$ [NC]
+RewriteCond %{REQUEST_URI} !.*\.js$ [NC]
+RewriteRule .* /index.html
