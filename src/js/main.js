@@ -143,6 +143,9 @@ if (!isMobile.matches) {
                 scrollTo(-20, 500, 'lr');
                 setTimeout(function(){ scrollTo(-20, 500); }, 500);
 
+                history.pushState({}, this.innerText, this.href);
+                document.title = this.innerText.toLowerCase().replace(/\b\w/g, function(l){ return l.toUpperCase() }) + ' - Chambers District Footscray';
+
                 document.querySelectorAll('[data-go]').forEach(function(item) { item.classList.remove('selected'); });
 
                 document.querySelector('[data-go="' + this.dataset.go + '"]').classList.add('selected');
@@ -169,6 +172,9 @@ if (!isMobile.matches) {
             elem.addEventListener('click', function(event) {
                 scrollTo(-20, 500, 'lr');
                 setTimeout(function(){ scrollTo(-20, 500); }, 500);
+
+                history.pushState({}, this.innerText, this.href);
+                document.title = this.innerText.toLowerCase().replace(/\b\w/g, function(l){ return l.toUpperCase() }) + ' - Chambers District Footscray';
 
                 document.querySelectorAll('[data-go]').forEach(function(item) { item.classList.remove('selected'); });
 
@@ -198,7 +204,8 @@ if (!isMobile.matches) {
             elem.addEventListener('click', function(event) {
                 var section = document.querySelector("section."+this.dataset.go);
 
-                // history.pushState({}, this.innerText, this.href);
+                history.pushState({}, this.innerText, this.href);
+                document.title = this.innerText ? this.innerText.toLowerCase().replace(/\b\w/g, function(l){ return l.toUpperCase() }) + ' - Chambers District Footscray' : 'Chambers District - Maddern Square, Footscray';
 
                 document.querySelectorAll('[data-go]').forEach(function(item) { item.classList.remove('selected'); });
                 
