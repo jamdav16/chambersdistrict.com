@@ -8,6 +8,10 @@ window.onload = function(e){
     document.getElementsByClassName("building")[0].classList.add('loaded');
     document.getElementsByClassName("rooftop-bar")[0].classList.add('loaded');
     document.getElementsByClassName("background__sky")[0].classList.add('loaded');
+
+    if(document.location.pathname != '/') {
+        $('a[href="' + document.location.pathname + '"]')[0].click();
+    }
 }
 
 //
@@ -130,10 +134,6 @@ if (!isMobile.matches) {
             }
     
         }
-    }
-
-    if(document.location.pathname != '/') {
-        $('a[href="' + document.location.pathname + '"]')[0].click();
     }
 
     //
