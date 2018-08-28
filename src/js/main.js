@@ -133,7 +133,7 @@ if (!isMobile.matches) {
     }
 
     if(document.location.pathname != '/') {
-        $('a[href="' + document.location.pathname + '"]').trigger('click');
+        $('a[href="' + document.location.pathname + '"]')[0].click();
     }
 
     //
