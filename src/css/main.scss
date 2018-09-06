@@ -190,11 +190,13 @@ i.pigeon {
     position: absolute;
     bottom: 0;
     left: 2%;
-    z-index: 100000;
+    z-index: 1000;
 
     &:nth-of-type(2) {
         bottom: 0;
         left: 7%;
+        width: 40px;
+        height: 40px;
         -moz-transform: scale(-1, 1);
         -webkit-transform: scale(-1, 1);
         -o-transform: scale(-1, 1);
@@ -218,7 +220,37 @@ i.pigeon {
     &:nth-of-type(5) {
         bottom: 67.5%;
         left: 80%;
+        width: 40px;
+        height: 40px;
     }
+
+    &:nth-of-type(6) {
+        bottom: 67.5%;
+        left: 60%;
+        width: 40px;
+        height: 40px;
+        -moz-transform: scale(-1, 1);
+        -webkit-transform: scale(-1, 1);
+        -o-transform: scale(-1, 1);
+        transform: scale(-1, 1);
+    }
+
+    &:nth-of-type(7) {
+        bottom: 37%;
+        left: 7%;
+        width: 40px;
+        height: 40px;
+        -moz-transform: scale(-1, 1);
+        -webkit-transform: scale(-1, 1);
+        -o-transform: scale(-1, 1);
+        transform: scale(-1, 1);
+    }
+}
+
+.background__sky.loaded {
+    -webkit-animation: onload 1.5s ease-in-out;
+    -moz-animation: onload 1.5s ease-in-out;
+    animation: onload 1.5s ease-in-out;
 }
 
 .background__land {
